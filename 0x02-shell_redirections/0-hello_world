@@ -1,2 +1,3 @@
 #!/bin/bash
-touch "Hello, World"
+printf "Hello, World"
+
