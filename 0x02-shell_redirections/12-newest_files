@@ -1,0 +1,2 @@
+#!/bin/bash
+cat 12-newest_files | head -n 10 
