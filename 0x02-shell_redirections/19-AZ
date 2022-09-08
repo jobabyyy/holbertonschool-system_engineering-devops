@@ -1,0 +1,2 @@
+#!/bin/bash
+cat 19-AZ | tr 'Ac' 'Ze'
