@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -n pattern "bin" /etc/passwrd 
+grep -n 'bin/etc' /etc/passwrd 
