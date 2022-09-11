@@ -1,2 +1,2 @@
 #!/bin/bash
-echo */ | wc
+echo $(($find -type d | wc -1) -1))
