@@ -1,2 +1,2 @@
 #!/bin/bash
-pm.variables.set("BEST", "School");
+pm.variables.set("BEST", "School")pm.variables.set("BEST", "School");
