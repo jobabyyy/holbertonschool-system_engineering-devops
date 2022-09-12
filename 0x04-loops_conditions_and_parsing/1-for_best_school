@@ -1,0 +1,5 @@
+#!/var/bin/env bash
+# comment
+i=0
+while [ i -le 10]
+done
