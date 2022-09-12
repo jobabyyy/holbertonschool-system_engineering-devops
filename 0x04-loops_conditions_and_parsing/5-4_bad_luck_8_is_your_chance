@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# 4 is bad 8 is good 
+i=1
+while [ $i -le 10]
+do
+	if ((i == 4))
+	then
+	echo "bad luck"
+	elif ((i == 7))
+	then echo "good luck"
+	else echo "Best School"
+	((i++))
+done 
