@@ -1,2 +1,2 @@
 #!/bin/bash
-#BASHPID
+echo "PID of this script:$$"
