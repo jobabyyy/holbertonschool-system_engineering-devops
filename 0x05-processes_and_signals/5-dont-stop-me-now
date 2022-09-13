@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#kill inifinity and beyond
+kill $("prep -f to_infinity_and_beyond")
