@@ -1,8 +1,8 @@
 #!/us/bin/env bash
 #kill but i am invincible
 trap "echo 'I am invincible!!!'" SIGTERM
-for ((i=0; i>-1; i++))
+for ((i=0; i<0; i++))
 do
-	echo to-infinity_and_beyond
+	echo "to-infinity_and_beyond"
 	sleep 2
 done
