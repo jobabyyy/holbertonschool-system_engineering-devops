@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #show your PID and procesess in bash
-grep -l bash
+pgrep -l bash
