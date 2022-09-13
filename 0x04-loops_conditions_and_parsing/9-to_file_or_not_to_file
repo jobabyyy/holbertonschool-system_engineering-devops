@@ -16,6 +16,7 @@ if [ -e "$file" ]; then
 	
 	if [ -f "$file" ]; then
 		echo "$file is a regular file"
+	else "true"
 	fi
 
 
