@@ -1,4 +1,4 @@
-#!/us/bin/env bash
+#!/usr/bin/env bash
 #kill but i am invincible
 trap "echo 'I am invincible!!!'" SIGTERM
 for ((i=0; i>-1; i++))
