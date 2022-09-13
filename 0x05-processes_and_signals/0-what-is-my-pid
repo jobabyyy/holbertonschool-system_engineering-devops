@@ -1,2 +1,3 @@
 #!/bin/bash
+# finding script own PID
 echo $$
