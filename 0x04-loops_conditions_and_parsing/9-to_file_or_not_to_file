@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # inquire info abt files and check status
 
-file = "School"
+file="School"
 
 if [ -e "$file" ]; then
 	echo "$file file exists"
@@ -22,4 +22,4 @@ if [ -e "$file" ]; then
 else
 	
 	echo "$file file does not exist"
-fi"
+fi
