@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#kill 7-highlander run 8 beheaded process in new terminal
+pkill -kill -f "7-highlander"
