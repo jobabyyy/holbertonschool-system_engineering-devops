@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#convert base 10 to base 16
+$ echo $((10#16))
