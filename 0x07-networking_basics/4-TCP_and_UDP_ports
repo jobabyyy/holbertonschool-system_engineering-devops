@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# installing netstat
+netstat -l --program
