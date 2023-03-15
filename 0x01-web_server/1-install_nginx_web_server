@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Update package list and install nginx
+sudo apt update
+sudo apt install nginx -y
+
+# Set up nginx to listen on port 80
+sudo sed -i 's/listen\s*80/listen 0.0.0.0:80/g' /etc/nginx/sites-available/default
+
+# Restart nginx
+sudo service nginx restart
+
+# Create HTML file with "Hello World" message
+echo "<html><body><h1>Hello World</h1></body></html>" | sudo tee /var/www/html/index.html
+
+# Verify that Nginx is serving the "Hello World" message
+if curl -s http://localhost | grep "Hello World"; then
+  echo "Nginx is serving the 'Hello World' message"
+else
+  echo "Error: Nginx is not serving the 'Hello World' message"
+fi
