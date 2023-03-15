@@ -13,7 +13,7 @@ sudo service nginx restart
 # Create HTML file with "Hello World" message
 echo "<html><body><h1>Hello World</h1></body></html>" | sudo tee /var/www/html/index.html
 
-# Verify that Nginx is serving the "Hello World" message
+# Verify that Nginx is serving the "Hello World" msg
 if curl -s http://localhost | grep "Hello World!"; then
   echo "Nginx is serving the 'Hello World' message"
 else
