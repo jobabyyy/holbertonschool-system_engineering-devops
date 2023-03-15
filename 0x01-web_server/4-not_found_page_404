@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# page not found 404
 
 # Update package list and install nginx
 sudo apt update
