@@ -1,22 +1,31 @@
 #!/usr/bin/env bash
 # page not found 404
 
-# Update package list and install nginx
+# Install nginx
 sudo apt update
 sudo apt install nginx -y
 
-# Set up nginx to listen on port 80
-sudo sed -i 's/listen\s*80/listen 0.0.0.0:80/g' /etc/nginx/sites-available/default
+# Configure custom 404 page
+echo "<html><body><h1>Ceci n'est pas une page</h1></body></html>" | sudo tee /var/www/html/404.html
 
-# Restart nginx
+# Configure the nginx default site to use the custom 404 page
+sudo bash -c 'cat <<EOF > /etc/nginx/sites-available/default
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name _;
+    root /var/www/html;
+    index index.html;
+
+    location / {
+        try_files \$uri \$uri/ =404;
+        error_page 404 /404.html;
+        location = /404.html {
+            internal;
+        }
+    }
+}
+EOF'
+
+# Restart nginx to apply the configuration changes
 sudo service nginx restart
-
-# Create HTML file with "Hello World" message
-echo "<html><body><h1>Hello World</h1></body></html>" | sudo tee /var/www/html/index.html
-
-# Verify that Nginx is serving the "Hello World" message
-if curl -s http://localhost | grep "Hello World!"; then
-  echo "Nginx is serving the 'Hello World' message"
-else
-  echo "Error: Nginx is not serving the 'Hello World' message"
-fi
