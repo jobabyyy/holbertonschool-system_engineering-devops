@@ -1,0 +1,10 @@
+[mysqld]
+server-id       = 2
+binlog-do-db    = tyrell_corp
+pid-file        = /var/run/mysqld/mysqld.pid
+socket          = /var/run/mysqld/mysqld.sock
+datadir         = /var/lib/mysql
+log-error       = /var/log/mysql/error.log
+log_bin         = /var/log/mysql/mysql-bin.log
+relay_log       = /var/log/mysql/mysql-relay-bin
+symbolic-links  = 0
