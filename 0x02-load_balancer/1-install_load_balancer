@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# install HAproxy
+
+apt-get update
+apt-get -y install haproxy
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+cat <<EOT > /etc/haproxy/haproxy.cfg
+defaults
+    mode    http
+frontend http-in
+    bind    *:80
+    default_backend servers
+backend servers
+    balance roundrobin
+    server  5580-web-01 15.236.55.192:80 check
+    server  5580-web-02 15.236.51.254:80 check
+EOT
+sudo service haproxy restart
