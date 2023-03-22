@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# page not found 404
+
+# Install and configure Nginx to display custom 404 error page
 
 apt-get update
 apt-get upgrade -y
@@ -7,7 +8,7 @@ apt-get install -y nginx
 mkdir /etc/nginx/html -p
 touch /etc/nginx/html/404.html
 echo "Hello World!" > /etc/nginx/html/index.html
-echo "C'est n'est pas une page" > /etc/nginx/html/404.html
+echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
 printf %s "server {
     listen  80 default_server;
     listen  [::]:80 default_server;
@@ -16,9 +17,8 @@ printf %s "server {
     location /redirect_me {
         return 301 http://jobabyyy.tech;
     }
-        error_page 404 /404.html;
-    location /404 {
-        root /etc/nginx/html;
+    error_page 404 /404.html;
+    location = /404.html {
         internal;
     }
 }" > /etc/nginx/sites-available/default
