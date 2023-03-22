@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Install and configure Nginx to display custom 404 error page
 
 apt-get update
