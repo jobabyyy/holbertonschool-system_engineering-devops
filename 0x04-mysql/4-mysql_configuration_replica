@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [mysqld]
 server-id       = 2
 binlog-do-db    = tyrell_corp
@@ -20,4 +19,3 @@ log-error       = /var/log/mysql/error.log
 log_bin         = /var/log/mysql/mysql-bin.log
 relay_log       = /var/log/mysql/mysql-relay-bin
 symbolic-links  = 0
->>>>>>> e18bbb8f44c46aedeabebf531b11e2ee414c1a53
