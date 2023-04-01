@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-Python script that, using this REST API, for a given employee ID,
-returns information about his/her TODO list progress and exports data in CSV format.
+TODO list progress and exports data in CSV format.
 """
+
 import csv
 import requests
 from sys import argv
@@ -18,7 +18,9 @@ if __name__ == "__main__":
     employee_name = employee.get('name')
 
     with open('{}.csv'.format(employee_id), mode='w') as csv_file:
-        fieldnames = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
+        fieldnames =
+        ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
+
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
         writer.writeheader()
