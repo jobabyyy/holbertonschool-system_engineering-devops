@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 """
-TODO list progress and exports data in CSV format.
+Python script that, using this REST API,
+TODO list progress and exports data
+in CSV format.
 """
-
 import csv
 import requests
 from sys import argv
-import urllib
-
 
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com"
@@ -17,18 +16,18 @@ if __name__ == "__main__":
 
     employee_name = employee.get('name')
 
-    with open('{}.csv'.format(employee_id), mode='w') as csv_file:
-        fieldnames =
-        ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
+    fieldnames = ['USER_ID', 'USERNAME', 'TASK_COMPLETED_STATUS', 'TASK_TITLE']
 
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    with open('{}.csv'.format(employee_id), mode='w') as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames, delimiter=',')
 
         writer.writeheader()
 
         for task in todos:
+            completed_status = "True" if task["completed"] else "False"
             writer.writerow({
                 'USER_ID': employee_id,
                 'USERNAME': employee_name,
-                'TASK_COMPLETED_STATUS': task.get('completed'),
+                'TASK_COMPLETED_STATUS': task.get("completed"),
                 'TASK_TITLE': task.get('title')
             })
